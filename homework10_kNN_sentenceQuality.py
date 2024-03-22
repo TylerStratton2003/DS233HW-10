@@ -1,5 +1,5 @@
 # name 1: Tyler Stratton
-# name 2:
+# name 2: Daniel Ma
 # name 3:
 
 
@@ -11,12 +11,16 @@ class kNNsentenceQuality():
     
     def trainkNN(self, trainingData, kNNmodel):
         # traing a kNN model on the training dataset, your group should find a training dataset with three different qualities
-        with open("", 'r') as file:
+        with open("trainWord.txt", 'r') as file:
             for line in file[1:]:
                 # read the data into an array
                 self.foo.append([item for item in line.split()])
+                # Prepare a numpy array to give to knn
                 
         pass
+    
+    def evalQuality(self, ):
+        return
 
     def Quality_kNN(self, sentence, kNNmodel):
         # please implement this function to classify the sentence into three different classes: high, low, and medium quality. Using the kNNmodel trained by kNN
