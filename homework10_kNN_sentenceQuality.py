@@ -6,10 +6,16 @@
 class kNNsentenceQuality():
     def __init__(self):
         # do some initialization, optional
+        self.foo = []
         pass
+    
     def trainkNN(self, trainingData, kNNmodel):
         # traing a kNN model on the training dataset, your group should find a training dataset with three different qualities
-        
+        with open("", 'r') as file:
+            for line in file:
+                # read the data into an array
+                self.foo.append([item for item in line.split()])
+                
         pass
 
     def Quality_kNN(self, sentence, kNNmodel):
