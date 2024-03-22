@@ -6,7 +6,8 @@
 class kNNsentenceQuality():
     def __init__(self):
         # do some initialization, optional
-        self.foo = []
+        self.data = []
+        self.quality = []
         pass
     
     def trainkNN(self, trainingData, kNNmodel):
@@ -14,13 +15,21 @@ class kNNsentenceQuality():
         with open("trainWord.txt", 'r') as file:
             for line in file[1:]:
                 # read the data into an array
-                self.foo.append([item for item in line.split()])
+                self.data.append([item for item in line.split()])
+
                 # Prepare a numpy array to give to knn
                 
         pass
     
-    def evalQuality(self, ):
-        return
+    def evalQuality(self, line:list):
+        # Given a list of scores
+        # return a quality rating
+        if line[0] < 0.4:
+            return -1 # Low Quality
+        elif line[0] < 0.7:
+            return 0 # Medium Quality
+        else:
+            return 1 # High Quality
 
     def Quality_kNN(self, sentence, kNNmodel):
         # please implement this function to classify the sentence into three different classes: high, low, and medium quality. Using the kNNmodel trained by kNN
