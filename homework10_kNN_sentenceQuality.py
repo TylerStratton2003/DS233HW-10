@@ -12,7 +12,7 @@ class kNNsentenceQuality():
     def trainkNN(self, trainingData, kNNmodel):
         # traing a kNN model on the training dataset, your group should find a training dataset with three different qualities
         with open("", 'r') as file:
-            for line in file:
+            for line in file[1:]:
                 # read the data into an array
                 self.foo.append([item for item in line.split()])
                 
