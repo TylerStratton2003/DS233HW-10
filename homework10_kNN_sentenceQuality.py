@@ -37,7 +37,7 @@ class kNNsentenceQuality():
             # Fill the x values
             for line in self.data:
                 temp = line[1:]
-                x.append(temp)
+                self.x.append(temp)
             self.x = numpy.array(self.x)
             
             # train the knn model
@@ -141,6 +141,6 @@ class sentenceQuality():
 obj = kNNsentenceQuality()
 
 model = obj.trainkNN(trainingData="trainWord.txt")
-s = "DATA 233 is a wonderful class!"
+s = "DATA 233 is an excellent class!"
 
 print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s, model)))
