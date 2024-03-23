@@ -2,6 +2,7 @@
 # name 2: Daniel Ma
 # name 3:
 import numpy
+from sklearn.neighbors import KNeighborsClassifier
 
 class kNNsentenceQuality():
     def __init__(self):
@@ -23,9 +24,17 @@ class kNNsentenceQuality():
                 self.quality.append(self.evalQuality(self.data[-1])) # Take the last element of data and get the evaluation
 
             # Prepare a numpy array to give to knn
+            # Fill the y values
             self.y = numpy.array(self.quality)
-                
-                
+            # Fill the x values
+            self.x = numpy.array(self.data)
+            
+            # train the knn model
+            kNNmodel = KNeighborsClassifier(n_neighbors=5, weights='uniform', metric='euclidean')
+            kNNmodel.fit(self.x, self.y)
+            
+            # return the model
+            return kNNmodel
         pass
     
     def evalQuality(self, line:list):
