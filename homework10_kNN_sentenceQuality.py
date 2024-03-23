@@ -7,12 +7,15 @@ from sklearn.neighbors import NearestNeighbors
 import numpy as np
 from textblob import TextBlob
 
+import numpy
 
 class kNNsentenceQuality():
     def __init__(self):
         # do some initialization, optional
         self.data = []
         self.quality = []
+        self.y
+        self.x
         pass
     
     def trainkNN(self, trainingData, kNNmodel):
@@ -20,9 +23,14 @@ class kNNsentenceQuality():
         with open("trainWord.txt", 'r') as file:
             for line in file[1:]:
                 # read the data into an array
-                self.data.append([item for item in line.split()])
+                self.data.append([item for item in line.split()]) # Add a row of training scores to the back of data
 
-                # Prepare a numpy array to give to knn
+                # add a quality evaluation to the quality list
+                self.quality.append(self.evalQuality(self.data[-1])) # Take the last element of data and get the evaluation
+
+            # Prepare a numpy array to give to knn
+            self.y = numpy.array(self.quality)
+
                 
         pass
     
