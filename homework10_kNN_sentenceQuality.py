@@ -62,7 +62,7 @@ class kNNsentenceQuality():
         # notes: You may reuse your previous homework, and calculate the features for each input sentence, and then use kNN to classify the input sentence
         obj = sentenceQuality()
         sen = obj.calculateScores(sentence)
-        predicted_Y = kNNmodel.predict(sen[1])
+        predicted_Y = kNNmodel.predict(numpy.array([sen]))
 
         return predicted_Y
         pass
@@ -130,6 +130,7 @@ class sentenceQuality():
 
         return [length, polarity, subjectivity, readability]
         pass
+
 
 
 
