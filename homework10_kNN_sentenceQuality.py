@@ -15,8 +15,8 @@ class kNNsentenceQuality():
         # do some initialization, optional
         self.data = []
         self.quality = []
-        self.y
-        self.x
+        self.y = 0
+        self.x = 0
         pass
     
     def trainkNN(self, trainingData, kNNmodel):
@@ -135,4 +135,4 @@ class sentenceQuality():
 obj = kNNsentenceQuality()
 s = "DATA 233 is a wonderful class!"
 
-print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s)))
+print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s, )))
