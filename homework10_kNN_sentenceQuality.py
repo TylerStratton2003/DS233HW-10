@@ -19,7 +19,7 @@ class kNNsentenceQuality():
         self.x = 0
         pass
     
-    def trainkNN(self, trainingData, kNNmodel):
+    def trainkNN(self, trainingData):
         # traing a kNN model on the training dataset, your group should find a training dataset with three different qualities
         with open("trainWord.txt", 'r') as file:
             for line in file[1:]:
@@ -133,6 +133,8 @@ class sentenceQuality():
 
 # this is for testing only
 obj = kNNsentenceQuality()
+
+model = obj.trainkNN(trainingData="trainWord.txt")
 s = "DATA 233 is a wonderful class!"
 
-print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s, )))
+print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s, model)))
