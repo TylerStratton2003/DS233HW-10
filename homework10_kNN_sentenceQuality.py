@@ -16,7 +16,7 @@ class kNNsentenceQuality():
         self.data = []
         self.quality = []
         self.y = 0
-        self.x = 0
+        self.x = []
         pass
     
     def trainkNN(self, trainingData):
@@ -35,7 +35,10 @@ class kNNsentenceQuality():
             # Fill the y values
             self.y = numpy.array(self.quality)
             # Fill the x values
-            self.x = numpy.array(self.data)
+            for line in self.data:
+                temp = line[1:]
+                x.append(temp)
+            self.x = numpy.array(self.x)
             
             # train the knn model
             kNNmodel = KNeighborsClassifier(n_neighbors=5, weights='uniform', metric='euclidean')
