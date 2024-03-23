@@ -26,7 +26,7 @@ class kNNsentenceQuality():
             file.readline()
             for line in file:
                 # read the data into an array
-                self.data.append([item for item in line.split()]) # Add a row of training scores to the back of data
+                self.data.append([float(item) for item in line.split()]) # Add a row of training scores to the back of data
 
                 # add a quality evaluation to the quality list
                 self.quality.append(self.evalQuality(self.data[-1])) # Take the last element of data and get the evaluation
