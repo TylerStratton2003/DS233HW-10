@@ -144,3 +144,11 @@ model = obj.trainkNN(trainingData="trainWord.txt")
 s = "DATA 233 is an excellent class!"
 
 print("The final quality for your input using kNN is " + str(obj.Quality_kNN(s, model)))
+
+with open('testWord.txt', 'r') as file:
+    foo = []
+    for line in file:
+        foo.append([float(item) for item in line.split()])
+    #print(foo)
+    for scores in foo:
+        print("The final estimated quality for your input using LR is " + str(model.predict(numpy.array([scores[1:]]))) + ", and the actual is " + str(scores[0]))
